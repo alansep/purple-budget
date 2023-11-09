@@ -5,8 +5,8 @@ pipeline {
         stage ('Compilando SPA'){
             steps {
                 script {
-                    sh "cd /home/ubuntu;"
-                    sh "touch deu-certo.txt;"
+                    sh 'cd /home/ubuntu;'
+                    sh 'touch deu-certo.txt;'
                 }
             }
         }
