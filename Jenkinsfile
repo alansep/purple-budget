@@ -5,14 +5,14 @@ pipeline {
         stage ('Preparando compilação'){
             steps {
                 script {
-                    sh 'sudo npm i'
+                    sh 'npm i'
                 }
             }
         }
         stage ('Compilando SPA'){
             steps {
                 script {
-                    sh 'sudo ng build --base-href .'
+                    sh 'ng build --base-href .'
                 }
             }
         }
