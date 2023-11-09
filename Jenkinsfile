@@ -6,8 +6,7 @@ pipeline {
             steps {
                 script {
                     sh 'pwd'
-                    sh 'npm i'
-                    sh 'ng build --base-href .'
+                    sh 'ls'
                 }
             }
         }
