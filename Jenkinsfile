@@ -5,8 +5,8 @@ pipeline {
         stage ('Compilando SPA'){
             steps {
                 script {
-                    sh 'pwd'
-                    sh 'ls'
+                    sh 'whoami'
+                    sh 'cp /home/ubuntu/links/compilados/purple-budget/* /home/ubuntu/links/producao/purple-budget'
                 }
             }
         }
