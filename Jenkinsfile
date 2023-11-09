@@ -2,9 +2,12 @@ pipeline {
     agent any
 
     stages {
-        stage ('Inicial'){
+        stage ('Compilando SPA'){
             steps {
-                echo 'Iniciando a pipeline'
+                script {
+                    sh "cd /home/ubuntu;"
+                    sh "touch deu-certo.txt;"
+                }
             }
         }
     }
