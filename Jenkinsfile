@@ -5,7 +5,7 @@ pipeline {
         stage ('Preparando compilação'){
             steps {
                 script {
-                    sh 'npm i'
+                    sh 'npm i --legacy-peer-deps'
                 }
             }
         }
