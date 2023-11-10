@@ -9,14 +9,11 @@
         </button>
     </div>
     <div class="mensagem flex-container flex-column" *ngIf="podeMostrar">
-        <h1>Jenkins está integrado e compilando na propria maquina com webhook!!!! :)</h1>
-        <span class="fonte-padrao">
+        <span class="fonte-padrao" style="margin-bottom: 30px">
             Você pode gastar até R${{resultado}} por dia!
         </span>
-        <button (click)="exibirPrimeiraTela()">
-            Voltar
-        </button>
-        <table style="font-size: 15px;">
+       
+        <table style="font-size: 15px; margin-bottom: 30px;">
             <tr>
                 <th>Dia</th>
                 <th>Valor</th>
@@ -29,5 +26,8 @@
 
             </tr>
         </table>
+        <button (click)="exibirPrimeiraTela()">
+            Voltar
+        </button>
     </div>
 </div>
