@@ -1,10 +1,10 @@
 <div class="full-screen flex-container flex-column cor-fundo">
     <div class="full-screen flex-container flex-column" *ngIf="!podeMostrar">
-        <span class="fonte-padrao">
+        <span class="fonte-padrao mb-3">
             Qual o seu orçamento até o fim do mês?
         </span>
-        <input type="tel" [(ngModel)]="orcamento">
-        <button (click)="calcular()">
+        <input class="mb-3" type="tel" [(ngModel)]="orcamento">
+        <button class="btn btn-outline-light" (click)="calcular()">
             Testar
         </button>
     </div>
@@ -26,7 +26,7 @@
 
             </tr>
         </table>
-        <button (click)="exibirPrimeiraTela()">
+        <button class="btn btn-outline-light" (click)="exibirPrimeiraTela()">
             Voltar
         </button>
     </div>

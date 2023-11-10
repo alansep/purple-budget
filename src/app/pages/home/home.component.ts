@@ -10,7 +10,7 @@ import { FurtherDateBalance } from './model/FurtherDateBalance.model';
 export class HomeComponent implements OnInit{
 
   public diasParaCalculo: number;
-  public orcamento: number = 0;
+  public orcamento: string = '';
   public resultado: string = '';
   public podeMostrar: boolean = false;
   public localStorageService: LocalStorageService;
@@ -29,7 +29,7 @@ export class HomeComponent implements OnInit{
   }
 
   public calcular(): void {
-    this.resultado = (this.orcamento / this.diasParaCalculo).toFixed(2).toString().replace('.', ',');
+    this.resultado = (this.parseBudget(this.orcamento) / this.diasParaCalculo).toFixed(2).toString().replace('.', ',');
     this.podeMostrar = true;
     this.localStorageService.saveOnLocalStorage('resultado', this.resultado.toString());
     this.furtherMovements = [];
@@ -37,7 +37,7 @@ export class HomeComponent implements OnInit{
     for (let i = 1; i <= this.diasParaCalculo - 1; i++) {
       let date = new Date();
       let furtherDay = new Date(date.getFullYear(), date.getMonth(), date.getDate() + i);
-      let furtherResult = this.orcamento / (this.diasParaCalculo - i);
+      let furtherResult = this.parseBudget(this.orcamento) / (this.diasParaCalculo - i);
       this.furtherMovements.push(new FurtherDateBalance(furtherDay.getDate() + "/" + (furtherDay.getMonth() + 1), furtherResult.toFixed(2)));
     }
 
@@ -51,8 +51,12 @@ export class HomeComponent implements OnInit{
   }
 
   public exibirPrimeiraTela(): void {
-    this.orcamento = 0;
+    this.orcamento = '';
     this.podeMostrar = false;
+  }
+
+  private parseBudget(budget: string): number{
+    return Number.parseFloat(budget);
   }
 
 }
